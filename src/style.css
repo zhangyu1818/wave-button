@@ -1,0 +1,7 @@
+.wave-button {
+  @apply relative;
+}
+
+.wave-button canvas.motion-wave {
+  @apply absolute inset-0 -z-10;
+}

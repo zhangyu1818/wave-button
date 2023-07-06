@@ -1,0 +1,59 @@
+{
+  "name": "wave-button",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "description": "React cool wave-button",
+  "homepage": "https://zhangyu1818.github.io/wave-button",
+  "repository": {
+    "url": "https://github.com/zhangyu1818/wave-button",
+    "type": "git"
+  },
+  "keywords": [
+    "button",
+    "react button",
+    "wave button"
+  ],
+  "author": {
+    "name": "zhangyu1818",
+    "email": "zhangyu1818@qq.com"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:demo": "tsc && vite build",
+    "build": "tsc -p tsconfig.build.json && npx tailwindcss --content ./src/button.tsx -i ./src/style.css -o ./dist/style.css",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-aria/button": "^3.8.0",
+    "clsx": "^1.2.1",
+    "motion-wave": "^0.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "gh-pages": "^5.0.0",
+    "postcss": "^8.4.25",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.63.6",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  }
+}

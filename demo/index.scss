@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wave-button {
+  @apply text-white outline-black;
+  canvas.motion-wave {
+    @apply bg-white dark:bg-black dark:fill-white;
+  }
+  &-inner {
+    @apply mix-blend-difference;
+  }
+}
