@@ -15,7 +15,7 @@ npm i wave-button
 ```tsx
 import { WaveButton } from 'wave-button'
 
-import 'wave-button/style.css'
+import 'wave-button/dist/style.css'
 
 function App() {
   return <WaveButton>Button</WaveButton>
