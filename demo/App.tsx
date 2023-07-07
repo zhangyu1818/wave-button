@@ -27,17 +27,17 @@ function App() {
           ></path>
         </svg>
       </a>
-      <h1 className='mb-12 mt-8 text-4xl font-bold'>Wave Button</h1>
+      <h1 className='mb-12 mt-8 text-4xl font-semibold'>Wave Button</h1>
       <WaveButton
         aria-label='example wave button'
         className='group px-28 py-8 text-3xl font-semibold uppercase'
       >
-        <i className='flex w-40 overflow-hidden whitespace-nowrap before:block before:w-full before:flex-none before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-["Hover_Me"] after:block after:w-full after:flex-none after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.16,1,0.3,1)] after:content-["Tap_Me"] group-hover:before:-translate-x-full group-hover:after:-translate-x-full' />
+        <i className='flex w-40 overflow-hidden whitespace-nowrap before:block before:w-full before:flex-none before:text-center before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-["Hover_Me"] after:block after:w-full after:flex-none after:text-center after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.16,1,0.3,1)] after:content-["Tap_Me"] group-hover:before:-translate-x-full group-hover:after:-translate-x-full' />
       </WaveButton>
       <p className='text-lg italic'>Just button, but it's cool!</p>
       <h1 className='text-xl font-semibold'>Installation</h1>
       <div className='group relative bg-black dark:bg-white'>
-        <pre className='px-16 py-6 text-white mix-blend-difference'>
+        <pre className='px-16 py-6 text-lg text-white mix-blend-difference'>
           npm install wave-button
         </pre>
         <span
