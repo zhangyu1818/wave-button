@@ -40,6 +40,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.25)
+  dark-toggle:
+    specifier: ^1.0.0
+    version: 1.0.0
   eslint:
     specifier: ^8.44.0
     version: 8.44.0
@@ -1169,6 +1172,10 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
+
+  /dark-toggle@1.0.0:
+    resolution: {integrity: sha512-8VZ00PBB2PftbfX5Co0OHNqDsKNaEgzPU0zrKzUb5yMDheQJQjVrPfuHJVUIAto2J+Bz0FhxnLMuxTGgbnXHog==}
     dev: true
 
   /debug@4.3.4:

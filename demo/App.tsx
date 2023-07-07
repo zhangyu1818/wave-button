@@ -1,8 +1,17 @@
+import { createDarkToggle } from 'dark-toggle'
+
 import { WaveButton } from '../src'
+
+const toggle = createDarkToggle('theme', (dark) => {
+  document.documentElement.classList[dark ? 'add' : 'remove']('dark')
+})
 
 function App() {
   return (
-    <main className='flex h-screen flex-col items-center gap-16 py-4 mix-blend-difference dark:bg-black dark:text-white'>
+    <main
+      onClick={toggle}
+      className='flex h-screen flex-col items-center gap-16 py-4 mix-blend-difference transition dark:bg-black dark:text-white'
+    >
       <a
         href='https://github.com/zhangyu1818/wave-button'
         className='absolute right-0 top-0'
@@ -27,7 +36,10 @@ function App() {
           ></path>
         </svg>
       </a>
-      <h1 className='mb-12 mt-8 text-4xl font-semibold'>Wave Button</h1>
+      <div className='mb-12 mt-8'>
+        <h1 className='text-center text-4xl font-semibold'>Wave Button</h1>
+        <p>Click the blank to switch the background.</p>
+      </div>
       <WaveButton
         aria-label='example wave button'
         className='group px-28 py-8 text-3xl font-semibold uppercase'
@@ -36,7 +48,10 @@ function App() {
       </WaveButton>
       <p className='text-lg italic'>Just button, but it's cool!</p>
       <h1 className='text-xl font-semibold'>Installation</h1>
-      <div className='group relative bg-black dark:bg-white'>
+      <div
+        className='group relative bg-black dark:bg-white'
+        onClick={(e) => e.stopPropagation()}
+      >
         <pre className='px-16 py-6 text-lg text-white mix-blend-difference'>
           npm install wave-button
         </pre>
