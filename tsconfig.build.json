@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
-    "outDir": "dist/types",
+    "outDir": "dist/type",
     "noEmit": false,
     "allowImportingTsExtensions": false,
     "declaration": true,
