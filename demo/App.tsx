@@ -9,8 +9,15 @@ const toggle = createDarkToggle('theme', (dark) => {
 function App() {
   return (
     <main
-      onClick={toggle}
-      className='flex h-screen flex-col items-center gap-16 py-4 mix-blend-difference transition dark:bg-black dark:text-white'
+      onClick={(event) => {
+        const target = event.target as HTMLElement
+        if (target.closest('a')) {
+          return
+        }
+
+        toggle()
+      }}
+      className='flex h-screen flex-col items-center justify-between py-4 mix-blend-difference transition dark:bg-black dark:text-white'
     >
       <a
         href='https://github.com/zhangyu1818/wave-button'
@@ -36,10 +43,7 @@ function App() {
           ></path>
         </svg>
       </a>
-      <div className='mb-12 mt-8'>
-        <h1 className='text-center text-4xl font-semibold'>Wave Button</h1>
-        <p>Click the blank to switch the background.</p>
-      </div>
+      <h1 className='mt-8 text-center text-4xl font-semibold'>Wave Button</h1>
       <WaveButton
         aria-label='example wave button'
         className='group px-28 py-8 text-3xl font-semibold uppercase'
@@ -47,48 +51,49 @@ function App() {
         <i className='flex w-40 overflow-hidden whitespace-nowrap before:block before:w-full before:flex-none before:text-center before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-["Hover_Me"] after:block after:w-full after:flex-none after:text-center after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.16,1,0.3,1)] after:content-["Tap_Me"] group-hover:before:-translate-x-full group-hover:after:-translate-x-full' />
       </WaveButton>
       <p className='text-lg italic'>Just button, but it's cool!</p>
-      <h1 className='text-xl font-semibold'>Installation</h1>
-      <div
-        className='group relative bg-black dark:bg-white'
-        onClick={(e) => e.stopPropagation()}
-      >
-        <pre className='px-16 py-6 text-lg text-white mix-blend-difference'>
-          npm install wave-button
-        </pre>
-        <span
-          aria-label='copy to paste'
-          onClick={() => {
-            navigator.clipboard
-              .writeText('npm install wave-button')
-              .then(() => {
-                console.log('copied')
-              })
-              .catch(() => {
-                console.error('failed')
-              })
-          }}
-          role='button'
-          className='absolute right-1 top-1/2 hidden -translate-y-1/2 p-4 text-white transition active:scale-125 group-hover:block dark:text-black'
+      <div className='flex flex-col items-center gap-8'>
+        <h1 className='text-xl font-semibold'>Installation</h1>
+        <div
+          className='group relative bg-black dark:bg-white'
+          onClick={(e) => e.stopPropagation()}
         >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='1em'
-            height='1em'
-            viewBox='0 0 24 24'
-            aria-hidden='true'
+          <pre className='px-16 py-6 text-lg text-white mix-blend-difference'>
+            npm install wave-button
+          </pre>
+          <span
+            aria-label='copy to paste'
+            onClick={() => {
+              navigator.clipboard
+                .writeText('npm install wave-button')
+                .then(() => {
+                  console.log('copied')
+                })
+                .catch(() => {
+                  console.error('failed')
+                })
+            }}
+            role='button'
+            className='absolute right-1 top-1/2 hidden -translate-y-1/2 p-4 text-white transition active:scale-125 group-hover:block dark:text-black'
           >
-            <path
-              d='M9 4h6v2H9zm11 7h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z'
-              fill='currentColor'
-            ></path>
-            <path
-              d='M21 9V6a2 2 0 0 0-2-2h-2a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v-9a2 2 0 0 1 2-2h10zM9 6V4h6v2H9z'
-              fill='currentColor'
-            ></path>
-          </svg>
-        </span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='1em'
+              height='1em'
+              viewBox='0 0 24 24'
+              aria-hidden='true'
+            >
+              <path
+                d='M9 4h6v2H9zm11 7h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z'
+                fill='currentColor'
+              ></path>
+              <path
+                d='M21 9V6a2 2 0 0 0-2-2h-2a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v-9a2 2 0 0 1 2-2h10zM9 6V4h6v2H9z'
+                fill='currentColor'
+              ></path>
+            </svg>
+          </span>
+        </div>
       </div>
-      <div className='flex-1' />
       <footer>
         <p className='flex items-center gap-1 text-xs text-zinc-400'>
           zhangyu1818 © build with{' '}
